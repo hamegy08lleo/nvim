@@ -31,3 +31,12 @@ wk.register({
 	}
 }
 )
+
+wk.register({ 
+	[" "] = { 
+		f = {
+			name = "Find", 
+			f = {":Telescope find_files<cr>", "Files"},
+		}
+	}
+})
