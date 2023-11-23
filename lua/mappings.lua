@@ -40,3 +40,6 @@ wk.register({
 		}
 	}
 })
+
+vim.keymap.set('n', '<F3>', 'ggVG"+p')
+vim.keymap.set('n', '<F2>', 'ggVG"+y')

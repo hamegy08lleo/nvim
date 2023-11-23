@@ -15,11 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 plugins = { 
 	{ 
 		"nyoom-engineering/oxocarbon.nvim",
+		"catppuccin/nvim",
+		"ful1e5/onedark.nvim",
+		"neanias/everforest-nvim",
 		-- Add in any other configuration; 
 		--   event = foo, 
 		--   config = bar
 		--   end,
-		"catppuccin/nvim"
 	}, 
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -101,9 +103,18 @@ plugins = {
 			'goolord/alpha-nvim',
 			dependencies = { 'nvim-tree/nvim-web-devicons' },
 			config = function ()
-				require'alpha'.setup(require'alpha.themes.dashboard'.config)
+				require'alpha'.setup(require'alpha.themes.hvmegy'.config)
 			end
 		}
+	},
+	{
+		"barrett-ruth/live-server.nvim",
+		config = function ()
+			require('live-server').setup()
+		end
+	},
+	{
+		"christoomey/vim-tmux-navigator",
 	},
 }
 
