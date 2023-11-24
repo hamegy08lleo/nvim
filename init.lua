@@ -5,5 +5,6 @@ require('mappings')
 require('lsp')
 require('statusline')
 require('completion')
+require('ui')
 
 
