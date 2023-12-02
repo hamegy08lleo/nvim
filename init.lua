@@ -6,5 +6,6 @@ require('lsp')
 require('statusline')
 require('completion')
 require('ui')
+require('terminal')
 
 

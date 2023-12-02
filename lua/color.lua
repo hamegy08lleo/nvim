@@ -1,5 +1,5 @@
 vim.opt.background = "dark" -- set this to dark or light,
-vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "rose-pine"
 
 require("everforest").setup({
   ---Controls the "hardness" of the background. Options are "soft", "medium" or "hard".
