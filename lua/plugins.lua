@@ -148,6 +148,9 @@ plugins = {
 	},
 	{
   		'rose-pine/neovim', name = 'rose-pine'
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
 	}
 }
 

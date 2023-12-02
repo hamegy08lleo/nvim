@@ -1,4 +1,4 @@
-require('init') 
+require('init')
 require('plugins')
 require('color')
 require('mappings')
@@ -7,5 +7,6 @@ require('statusline')
 require('completion')
 require('ui')
 require('terminal')
+require('blankline')
 
 
