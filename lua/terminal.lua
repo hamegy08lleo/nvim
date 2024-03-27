@@ -1,5 +1,5 @@
 require'FTerm'.setup({
-	border = 'round',
+	border = 'single',
 	dimensions  = {
 		height = 0.8,
 		width = 0.8,

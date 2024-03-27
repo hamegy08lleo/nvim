@@ -6,14 +6,32 @@ require("mason-lspconfig").setup()
 -- require("lspconfig").rust_analyzer.setup {}
 -- ...
 
--- installed_lsp = {"lua_ls", "clangd"}
-  
+
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").lua_ls.setup {
-	capabilities = capabilities
-}
-require("lspconfig").clangd.setup {
-	capabilities = capabilities
-}
+-- language server parser
+local installed_lsp = {"lua_ls", "clangd", "rust_analyzer", "pyright", "typos_lsp"}
 
+for _, lsp in ipairs(installed_lsp) do
+  require("lspconfig")[lsp].setup {
+    capabilities = capabilities
+  }
+end
+
+local function enable_lsp_diagnostics()
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+      -- you can configure the virtual_text and signs options here
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      update_in_insert = true,
+    }
+  )
+end
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+  group = vim.api.nvim_create_augroup("LspDiags", { clear = true }),
+  callback = enable_lsp_diagnostics,
+})
